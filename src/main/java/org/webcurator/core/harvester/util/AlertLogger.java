@@ -34,6 +34,8 @@ import org.archive.io.SinkHandlerLogRecord;
  *  
  * @author nwaight
  */
+
+@SuppressWarnings("unchecked")
 public class AlertLogger {
 	/** used to write the alert log file. */
 	private FileWriter fw = null;
@@ -110,8 +112,9 @@ public class AlertLogger {
 	
 	/**
 	 * Attempt to close the log file when the object is garbage collected.
-	 */
+	 DEPRECATED
 	protected void finalize() {
 		close();
 	}
+	 */
 }

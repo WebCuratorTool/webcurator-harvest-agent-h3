@@ -66,9 +66,9 @@ public final class SchedulerUtil {
 
         JobDataMap jdm = new JobDataMap();
         jdm.put(HarvestCompleteJob.PARAM_JOB_NAME, aHarvestName);
-        jdm.put(HarvestCompleteJob.PARAM_FAILURE_STEP, new Integer(aFailueStep));
-        jdm.put(HarvestCompleteJob.PARAM_MSG_SENT, new Boolean(aMessageSent));
-        jdm.put(HarvestCompleteJob.PARAM_RETRIES, new Integer(aRetries));
+        jdm.put(HarvestCompleteJob.PARAM_FAILURE_STEP, Integer.valueOf(aFailueStep));
+        jdm.put(HarvestCompleteJob.PARAM_MSG_SENT, Boolean.valueOf(aMessageSent));
+        jdm.put(HarvestCompleteJob.PARAM_RETRIES, Integer.valueOf(aRetries));
 
         JobDetail job = JobBuilder.newJob(HarvestCompleteJob.class)
                 .withIdentity(JOB_NAME_COMPLETE + SEPARATOR + aHarvestName + SEPARATOR + aRetries,

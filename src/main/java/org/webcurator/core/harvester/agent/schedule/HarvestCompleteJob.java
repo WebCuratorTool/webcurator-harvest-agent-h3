@@ -77,8 +77,8 @@ public class HarvestCompleteJob implements Job {
                 if (!msgSent.booleanValue()) {
                     // Send the failure notification.
                     HarvestCoordinatorNotifier harvestCoordinatorNotifier = (HarvestCoordinatorNotifier) context.getBean(Constants.BEAN_NOTIFIER);
-                    harvestCoordinatorNotifier.notification(new Long(jobName), MessageType.CATEGORY_MISC, MessageType.TARGET_INSTANCE_PROCESSING_ERROR);
-                    msgSent = new Boolean(true);
+                    harvestCoordinatorNotifier.notification(Long.valueOf(jobName), MessageType.CATEGORY_MISC, MessageType.TARGET_INSTANCE_PROCESSING_ERROR);
+                    msgSent = Boolean.valueOf(true);
                 }                            
 
                 try {
